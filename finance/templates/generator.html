@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Genarator</title>
+    </head>
+    <body>
+        <p><a href='/'>To main page</a></p>
+        {% if lst_plus %}
+        <table border="1">
+            <caption>Positive transactions</caption>
+            <tr>
+                <th>Date</th>
+                <th>Transaction</th>
+            </tr>
+           {% for x, y in lst_plus %} 
+            <tr><td>{{x}}</td><td>{{y}}</td></tr>
+           {% endfor %}
+        </table>   
+        {% else %}
+        <p>Positive transactions doesn't exist</p>
+        {% endif %}
+        
+        <br>
+
+        {% if lst_minus %}
+        <table border="1">
+            <caption>Negative transactions</caption>
+            <tr>
+                <th>Date</th>
+                <th>Transaction</th>
+            </tr>
+           {% for x,y in lst_minus %} 
+            <tr><td>{{x}}</td><td>{{y}}</td></tr>
+           {% endfor %}
+        </table>   
+        {% else %}
+        <p>Negative transactions doesn't exist</p>
+        {% endif %}
+        
+        <br>
+        
+        <form>
+            <button>Generate</button>
+        </form>
+
+    </body>
+</html>               
